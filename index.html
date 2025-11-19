@@ -9,7 +9,7 @@
     <meta property="og:title" content="Edmar Eletricista - Serviços Elétricos em Santo André e SP">
     <meta property="og:description" content="Profissional qualificado em serviços elétricos. Atendimento emergencial 24h.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="logo-edmar.png">
+    <meta property="og:image" content="logo-edmar.jpg">
     <title>Edmar Eletricista | Serviços Elétricos em Santo André e Grande SP</title>
 
     <!-- Schema.org para SEO Local -->
@@ -18,7 +18,7 @@
       "@context": "https://schema.org",
       "@type": "Electrician",
       "name": "Edmar Eletricista",
-      "image": "logo-edmar.png",
+      "image": "logo-edmar.jpg",
       "telephone": "+55-11-96016-2360",
       "address": {
         "@type": "PostalAddress",
@@ -79,11 +79,15 @@
             padding: 0 20px;
         }
 
-        /* LOGO AUMENTADA */
+        /* LOGO BEM MAIOR */
+        .logo {
+            flex: 0 0 auto;
+        }
+
         .logo img {
-            height: 100px;  /* Aumentado de 60px para 100px */
+            height: 150px;  /* MUITO MAIOR - aumentado para 150px */
             width: auto;
-            max-width: 100%;
+            max-width: 400px;
             object-fit: contain;
         }
 
@@ -119,9 +123,9 @@
         .hero {
             background: linear-gradient(135deg, var(--primary-blue) 0%, #000088 100%);
             color: var(--text-white);
-            padding: 180px 20px 80px;  /* Aumentado padding-top para compensar header maior */
+            padding: 200px 20px 80px;
             text-align: center;
-            margin-top: 100px;  /* Ajustado para header maior */
+            margin-top: 120px;
         }
 
         .hero h1 {
@@ -175,7 +179,7 @@
 
         .carousel-wrapper {
             display: flex;
-            transition: transform 0.8s ease-in-out;  /* Transição mais suave (aumentado de 0.6s para 0.8s) */
+            transition: transform 0.8s ease-in-out;
         }
 
         .carousel-slide {
@@ -502,8 +506,8 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero {
-                padding: 160px 20px 60px;
-                margin-top: 90px;
+                padding: 180px 20px 60px;
+                margin-top: 110px;
             }
 
             .hero h1 {
@@ -519,9 +523,10 @@
                 gap: 15px;
             }
 
-            /* Logo maior no mobile também */
+            /* Logo grande no mobile também */
             .logo img {
-                height: 80px;  /* Aumentado de 50px para 80px */
+                height: 100px;
+                max-width: 300px;
             }
 
             .section-title {
@@ -580,9 +585,10 @@
                 font-size: 1rem;
             }
 
-            /* Logo menor em telas muito pequenas */
+            /* Logo ajustada para telas muito pequenas */
             .logo img {
-                height: 70px;
+                height: 80px;
+                max-width: 250px;
             }
         }
 
@@ -619,7 +625,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo-edmar.png" alt="Edmar Eletricista - Logo">
+                <img src="logo-edmar.jpg" alt="Edmar Eletricista - Logo">
             </div>
             <div class="header-contact">
                 <a href="tel:+5511960162360" class="cta-button">
@@ -651,10 +657,10 @@
                         <img src="Instagram-post-edmar-1.jpg" alt="Serviços Elétricos - Edmar Eletricista">
                     </div>
                     <div class="carousel-slide">
-                        <img src="Instagram-post-edmar-2.jpg" alt="Troca de Fiação - Edmar Eletricista">
+                        <img src="Instagram-post-edmar-3.jpg" alt="Profissional Qualificado - Edmar Eletricista">
                     </div>
                     <div class="carousel-slide">
-                        <img src="Instagram-post-edmar-3.jpg" alt="Profissional Qualificado - Edmar Eletricista">
+                        <img src="Instagram-post-edmar-2.jpg" alt="Troca de Fiação - Edmar Eletricista">
                     </div>
                 </div>
 
@@ -845,7 +851,7 @@
 
     <!-- JavaScript -->
     <script>
-        // Carousel functionality - PASSAGEM AUTOMÁTICA LATERAL
+        // Carousel functionality
         let currentSlide = 0;
         const totalSlides = 3;
         let autoPlayInterval;
@@ -854,7 +860,6 @@
             const wrapper = document.getElementById('carouselWrapper');
             const indicators = document.querySelectorAll('.indicator');
 
-            // Move o carrossel para o lado (translateX)
             wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
 
             indicators.forEach((indicator, index) => {
@@ -883,8 +888,8 @@
 
         function autoPlay() {
             autoPlayInterval = setInterval(() => {
-                moveSlide(1);  // Move automaticamente para o próximo slide
-            }, 4000); // Muda a cada 4 segundos
+                moveSlide(1);
+            }, 4000);
         }
 
         function resetAutoPlay() {
@@ -892,10 +897,10 @@
             autoPlay();
         }
 
-        // Inicia passagem automática quando a página carrega
+        // Start auto-play when page loads
         autoPlay();
 
-        // Pausa a passagem automática quando o mouse está sobre o carrossel
+        // Pause auto-play when user hovers over carousel
         const carouselContainer = document.querySelector('.carousel-container');
         carouselContainer.addEventListener('mouseenter', () => {
             clearInterval(autoPlayInterval);
@@ -905,7 +910,7 @@
             autoPlay();
         });
 
-        // Suporte a toque para mobile (deslizar com o dedo)
+        // Touch support for mobile
         let touchStartX = 0;
         let touchEndX = 0;
 
@@ -920,10 +925,10 @@
 
         function handleSwipe() {
             if (touchEndX < touchStartX - 50) {
-                moveSlide(1);  // Deslizar para esquerda = próximo
+                moveSlide(1);
             }
             if (touchEndX > touchStartX + 50) {
-                moveSlide(-1);  // Deslizar para direita = anterior
+                moveSlide(-1);
             }
         }
 
