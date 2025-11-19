@@ -63,7 +63,7 @@
             background: var(--primary-blue);
             color: var(--text-white);
             padding: 1.5rem 0;
-            position: relative;
+            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
@@ -120,12 +120,12 @@
         }
 
         /* Hero Section */
-        .hero {
+       .hero {
             background: linear-gradient(135deg, var(--primary-blue) 0%, #000088 100%);
             color: var(--text-white);
-            padding: 200px 20px 80px;
+            padding: 100px 20px 80px;  /* Padding reduzido */
             text-align: center;
-            margin-top: 120px;
+            /* margin-top removido */
         }
 
         .hero h1 {
@@ -161,7 +161,6 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-
         /* Carousel Section */
         .carousel-section {
             padding: 80px 20px;
@@ -978,11 +977,21 @@
         // Phone number formatting
         document.getElementById('telefone').addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
+
+            if (value.length === 0) {
+                e.target.value = '';
+                return;
+            }
+
+            // Formatar apenas números sem adicionar parênteses extras
             if (value.length <= 11) {
-                value = value.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
-                value = value.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
-                value = value.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
-                value = value.replace(/^(\d*)/, '($1');
+                if (value.length <= 2) {
+                    value = `(${value}`;
+                } else if (value.length <= 7) {
+                    value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
+                } else if (value.length <= 11) {
+                    value = `(${value.substring(0, 2)}) ${value.substring(2, 7)}-${value.substring(7, 11)}`;
+                }
                 e.target.value = value;
             }
         });
