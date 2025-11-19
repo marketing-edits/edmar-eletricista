@@ -62,7 +62,7 @@
         header {
             background: var(--primary-blue);
             color: var(--text-white);
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -79,8 +79,9 @@
             padding: 0 20px;
         }
 
+        /* LOGO AUMENTADA */
         .logo img {
-            height: 60px;
+            height: 100px;  /* Aumentado de 60px para 100px */
             width: auto;
             max-width: 100%;
             object-fit: contain;
@@ -118,9 +119,9 @@
         .hero {
             background: linear-gradient(135deg, var(--primary-blue) 0%, #000088 100%);
             color: var(--text-white);
-            padding: 150px 20px 80px;
+            padding: 180px 20px 80px;  /* Aumentado padding-top para compensar header maior */
             text-align: center;
-            margin-top: 80px;
+            margin-top: 100px;  /* Ajustado para header maior */
         }
 
         .hero h1 {
@@ -174,7 +175,7 @@
 
         .carousel-wrapper {
             display: flex;
-            transition: transform 0.6s ease-in-out;
+            transition: transform 0.8s ease-in-out;  /* Transição mais suave (aumentado de 0.6s para 0.8s) */
         }
 
         .carousel-slide {
@@ -500,6 +501,11 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero {
+                padding: 160px 20px 60px;
+                margin-top: 90px;
+            }
+
             .hero h1 {
                 font-size: 2rem;
             }
@@ -513,8 +519,9 @@
                 gap: 15px;
             }
 
+            /* Logo maior no mobile também */
             .logo img {
-                height: 50px;
+                height: 80px;  /* Aumentado de 50px para 80px */
             }
 
             .section-title {
@@ -571,6 +578,11 @@
             .carousel-nav {
                 padding: 8px 12px;
                 font-size: 1rem;
+            }
+
+            /* Logo menor em telas muito pequenas */
+            .logo img {
+                height: 70px;
             }
         }
 
@@ -833,7 +845,7 @@
 
     <!-- JavaScript -->
     <script>
-        // Carousel functionality
+        // Carousel functionality - PASSAGEM AUTOMÁTICA LATERAL
         let currentSlide = 0;
         const totalSlides = 3;
         let autoPlayInterval;
@@ -842,6 +854,7 @@
             const wrapper = document.getElementById('carouselWrapper');
             const indicators = document.querySelectorAll('.indicator');
 
+            // Move o carrossel para o lado (translateX)
             wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
 
             indicators.forEach((indicator, index) => {
@@ -870,8 +883,8 @@
 
         function autoPlay() {
             autoPlayInterval = setInterval(() => {
-                moveSlide(1);
-            }, 4000); // Change slide every 4 seconds
+                moveSlide(1);  // Move automaticamente para o próximo slide
+            }, 4000); // Muda a cada 4 segundos
         }
 
         function resetAutoPlay() {
@@ -879,10 +892,10 @@
             autoPlay();
         }
 
-        // Start auto-play when page loads
+        // Inicia passagem automática quando a página carrega
         autoPlay();
 
-        // Pause auto-play when user hovers over carousel
+        // Pausa a passagem automática quando o mouse está sobre o carrossel
         const carouselContainer = document.querySelector('.carousel-container');
         carouselContainer.addEventListener('mouseenter', () => {
             clearInterval(autoPlayInterval);
@@ -892,7 +905,7 @@
             autoPlay();
         });
 
-        // Touch support for mobile
+        // Suporte a toque para mobile (deslizar com o dedo)
         let touchStartX = 0;
         let touchEndX = 0;
 
@@ -907,10 +920,10 @@
 
         function handleSwipe() {
             if (touchEndX < touchStartX - 50) {
-                moveSlide(1);
+                moveSlide(1);  // Deslizar para esquerda = próximo
             }
             if (touchEndX > touchStartX + 50) {
-                moveSlide(-1);
+                moveSlide(-1);  // Deslizar para direita = anterior
             }
         }
 
