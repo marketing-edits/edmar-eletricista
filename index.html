@@ -72,18 +72,20 @@
         }
 
         .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;      /* alinha tudo no meio na vertical */
+    justify-content: center;  /* vai ajudar a centralizar a logo */
+    padding: 0 20px;
+    position: relative;       /* para posicionar o botão à direita */
+}
+            
         /* LOGO - TAMANHO REDUZIDO PARA NÃO OCUPAR TANTO ESPAÇO */
         .logo {
-            flex: 0 0 auto;
-        }
+    text-align: center;
+    flex: 0 0 auto;
+}
 
         .logo img {
             height: 120px;  /* Reduzido de 250px para 120px */
