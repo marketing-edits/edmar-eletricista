@@ -61,15 +61,17 @@
 
         /* Header FIXO */
         header {
-            background: var(--primary-black);
-            color: var(--text-white);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
+    background: url('fundo-header.jpg') center center no-repeat;
+    background-size: cover;      /* faz a imagem preencher o header */
+    color: var(--text-white);
+    padding: 0.5rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
 
         .header-container {
     max-width: 1200px;
