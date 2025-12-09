@@ -74,20 +74,21 @@
     display: flex;        /* <<< add */
     align-items: center;  /* <<< centraliza verticalmente */
 }
-
-
-        .header-container {
+.header-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    align-items: center;      /* alinha tudo no meio na vertical */
-    justify-content: flex-end;  /* vai ajudar a centralizar a logo */
+    align-items: center;
     padding: 0 20px;
-    position: relative;       /* para posicionar o botão à direita */
+    /* REMOVER essa linha: justify-content: flex-end; */
 }
-        .header-contact {
-    margin-left: auto;      /* empurra esse bloco para a direita */
+.header-contact {
+    margin-left: auto;   /* empurra o bloco para a direita */
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
             
         /* LOGO - TAMANHO REDUZIDO PARA NÃO OCUPAR TANTO ESPAÇO */
         .logo {
