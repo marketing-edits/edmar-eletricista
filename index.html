@@ -54,10 +54,13 @@
             align-items: center;
             justify-content: flex-end;
             padding: 0 40px;
+            width: 100%;
         }
-        .logo { text-align: center; flex: 0 0 auto; }
-        .logo img { height: 160px; width: auto; max-width: 320px; object-fit: contain; }
-        .header-contact { display: flex; align-items: center; gap: 10px; }
+        .header-contact { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+        }
         .cta-button {
             background: var(--primary-yellow);
             color: var(--primary-blue);
@@ -72,6 +75,7 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            white-space: nowrap;
         }
         .cta-button:hover {
             background: #FFC700;
@@ -210,20 +214,35 @@
         .produtos-float:hover { transform: scale(1.1); background: #218838; }
 
         @media (max-width: 768px) {
-            header { padding: 0.8rem 0; }
+            header { height: 140px; }
+            .header-container { 
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .header-contact {
+                gap: 10px;
+            }
+            .cta-button { padding: 10px 20px; font-size: 0.9rem; }
             .hero { padding: 200px 20px 60px; }
             .hero h1 { font-size: 2rem; }
             .hero p { font-size: 1.1rem; }
-            .logo img { height: 80px; max-width: 150px; }
-            .cta-button { padding: 10px 20px; font-size: 0.9rem; }
             .section-title { font-size: 2rem; }
             .carousel-nav { padding: 10px 15px; font-size: 1.2rem; }
         }
         @media (max-width: 480px) {
-            .hero { padding: 180px 20px 60px; }
+            header { height: 160px; }
+            .header-contact {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .cta-button {
+                width: auto;
+                min-width: 200px;
+                justify-content: center;
+            }
+            .hero { padding: 200px 20px 60px; }
             .hero h1 { font-size: 1.6rem; }
             .services-grid, .areas-grid { grid-template-columns: 1fr; }
-            .logo img { height: 70px; max-width: 130px; }
         }
         .success-message {
             display: none; background: #4CAF50; color: white;
@@ -238,6 +257,7 @@
         <div class="header-container">
             <div class="header-contact">
                 <a href="tel:+5511960162360" class="cta-button">📞 (11) 96016-2360</a>
+                <a href="produtos.html" class="cta-button">🛠️ VER PRODUTOS</a>
             </div>
         </div>
     </header>
