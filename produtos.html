@@ -4,52 +4,81 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ferramentas Profissionais - Edmar Eletricista</title>
+<meta name="description" content="Ferramentas profissionais recomendadas por Edmar Eletricista em Santo André. Equipamentos testados e aprovados para trabalhos elétricos.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--primary-blue:#0000CC;--primary-yellow:#FFD700}
-body{font-family:'Segoe UI',sans-serif;background:#f5f5f5}
-.header{background:linear-gradient(135deg,var(--primary-blue) 0%,#0b0b14 100%);padding:100px 20px 60px;color:white;text-align:center}
-.header h1{font-size:2.5rem;margin-bottom:15px}
-.header p{font-size:1.2rem;max-width:600px;margin:0 auto 25px;opacity:0.9}
-.header a{background:var(--primary-yellow);color:var(--primary-blue);padding:15px 40px;border-radius:25px;text-decoration:none;font-weight:bold;display:inline-block}
-.container{max-width:1200px;margin:0 auto;padding:40px 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.08);transition:all 0.3s}
-.card:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(0,0,0,0.15)}
-.card img{width:100%;height:220px;object-fit:contain;padding:20px;background:white}
-.card-body{padding:20px}
-.card h3{color:var(--primary-blue);font-size:1.1rem;margin-bottom:15px;min-height:50px}
-.card .preco{font-size:1.8rem;color:#28a745;font-weight:bold;margin-bottom:20px}
-.card .btn{display:block;background:#28a745;color:white;padding:15px;border-radius:25px;text-decoration:none;text-align:center;font-weight:bold;transition:all 0.3s}
-.card .btn:hover{background:#218838}
-.whatsapp-float{position:fixed;bottom:30px;right:30px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 4px 15px rgba(0,0,0,0.3);z-index:999;text-decoration:none}
-@media(max-width:768px){.header{padding:80px 20px 40px}.header h1{font-size:2rem}}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f5f5f5;line-height:1.6}
+
+header{background:linear-gradient(135deg,var(--primary-blue) 0%,#0b0b14 100%);padding:80px 20px 60px;color:white;text-align:center;position:relative}
+header h1{font-size:2.8rem;margin-bottom:15px;font-weight:700}
+header p{font-size:1.2rem;max-width:700px;margin:0 auto 30px;opacity:0.95;line-height:1.7}
+.btn-voltar{background:var(--primary-yellow);color:var(--primary-blue);padding:15px 40px;border-radius:30px;text-decoration:none;font-weight:bold;display:inline-block;transition:all 0.3s;font-size:1.05rem}
+.btn-voltar:hover{background:#FFC700;transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,0.4)}
+
+.container{max-width:1300px;margin:0 auto;padding:50px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:35px}
+.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 5px 25px rgba(0,0,0,0.08);transition:all 0.3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-10px);box-shadow:0 15px 45px rgba(0,0,0,0.15)}
+.card-img-wrapper{width:100%;height:260px;background:white;display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden}
+.card img{width:100%;height:100%;object-fit:contain;transition:transform 0.3s}
+.card:hover img{transform:scale(1.08)}
+.card-body{padding:25px;flex:1;display:flex;flex-direction:column}
+.card h3{color:var(--primary-blue);font-size:1.15rem;margin-bottom:15px;min-height:55px;line-height:1.4}
+.card .preco{font-size:1.9rem;color:#28a745;font-weight:bold;margin-bottom:20px}
+.card .btn{display:block;background:#28a745;color:white;padding:16px 30px;border-radius:30px;text-decoration:none;text-align:center;font-weight:bold;transition:all 0.3s;font-size:1.05rem;margin-top:auto}
+.card .btn:hover{background:#218838;transform:translateY(-2px);box-shadow:0 8px 25px rgba(40,167,69,0.3)}
+
+.whatsapp-float{position:fixed;bottom:30px;right:30px;background:#25D366;color:white;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.2rem;box-shadow:0 5px 20px rgba(37,211,102,0.4);z-index:999;text-decoration:none;transition:all 0.3s}
+.whatsapp-float:hover{transform:scale(1.15);box-shadow:0 8px 30px rgba(37,211,102,0.6)}
+
+footer{background:#333;color:white;padding:40px 20px;text-align:center;margin-top:60px}
+footer a{color:var(--primary-yellow);text-decoration:none;font-weight:bold}
+footer a:hover{text-decoration:underline}
+
+@media(max-width:768px){
+header{padding:60px 20px 40px}
+header h1{font-size:2.2rem}
+header p{font-size:1.05rem}
+.grid{grid-template-columns:1fr;gap:25px}
+.card h3{font-size:1.1rem;min-height:auto}
+}
 </style>
 </head>
 <body>
-<div class="header">
+<header>
 <h1>🛠️ Ferramentas Profissionais</h1>
-<p>Equipamentos que uso e recomendo para trabalhos elétricos. Links afiliados Mercado Livre.</p>
-<a href="/">← Voltar aos Serviços</a>
-</div>
+<p>Equipamentos que uso e recomendo para trabalhos elétricos de qualidade. Cada ferramenta foi testada em campo.</p>
+<a href="/" class="btn-voltar">← Voltar aos Serviços</a>
+</header>
+
 <div class="container">
 <div class="grid" id="grid"></div>
 </div>
-<a href="https://wa.me/5511960162360?text=Olá Edmar! Vi suas ferramentas" class="whatsapp-float">💬</a>
+
+<footer>
+<p>&copy; 2025 Edmar Eletricista | <a href="/">Voltar ao site principal</a></p>
+<p>Santo André - SP | WhatsApp: <a href="tel:+5511960162360">(11) 96016-2360</a></p>
+</footer>
+
+<a href="https://wa.me/5511960162360?text=Olá Edmar! Vi suas ferramentas profissionais" class="whatsapp-float" title="Falar no WhatsApp">💬</a>
+
 <script>
-const produtos = [{"nome": "Chave Plusminus Phillips Isolada Ph1 X 80mm Wiha", "preco": "R$ 136,72", "img_ml": "https://http2.mlstatic.com/D_NQ_NP_815363-MLB47542154886_092021-F.webp", "url_ml": "https://www.mercadolivre.com.br/p/MLB2018268320", "slug": "chave-plusminus-phillips-isolada-ph1-x-80mm-wiha"}, {"nome": "Alicates Industriais Isolados Conjunto Wiha 32981 Germany", "preco": "R$ 890,00", "img_ml": "https://http2.mlstatic.com/D_NQ_NP_624518-MLB52744063584_122022-F.webp", "url_ml": "https://www.mercadolivre.com.br/p/MLB24770318", "slug": "alicates-industriais-isolados-conjunto-wiha-32981"}, {"nome": "Identificação Perigo Equipamento Elétrico Pessoal", "preco": "R$ 19,50", "img_ml": "https://http2.mlstatic.com/D_NQ_NP_895424-MLB47479652134_092021-F.webp", "url_ml": "https://www.mercadolivre.com.br/p/MLB26849189", "slug": "identifica-o-perigo-equipamento-el-trico-pessoal"}, {"nome": "Conjunto De Alicates De Crimpagem + Terminais 1200 Pcs", "preco": "R$ 149,88", "img_ml": "https://http2.mlstatic.com/D_NQ_NP_886844-MLB75817655084_042024-F.webp", "url_ml": "https://www.mercadolivre.com.br/p/MLB52120456", "slug": "conjunto-de-alicates-de-crimpagem-terminais-1200-p"}, {"nome": "Minipa Ez Phase II Detector De Sequência Trifásica", "preco": "R$ 199,00", "img_ml": "https://http2.mlstatic.com/D_NQ_NP_910738-MLB46871169612_072021-F.webp", "url_ml": "https://www.mercadolivre.com.br/p/MLB24281450", "slug": "minipa-ez-phase-ii-detector-de-sequ-ncia-trif-sica"}, {"nome": "Alicate Crimpador 9 Prensa Terminais Automático Gross", "preco": "R$ 278,03", "img_ml": "https://http2.mlstatic.com/D_NQ_NP_793879-MLB72743855467_112023-F.webp", "url_ml": "https://www.mercadolivre.com.br/p/MLB40925546", "slug": "alicate-crimpador-9-prensa-terminais-autom-tico-gr"}, {"nome": "Estilete Trapezoidal 18mm Reforçado Sata St93642", "preco": "R$ 72,45", "img_ml": "https://http2.mlstatic.com/D_NQ_NP_698166-MLB51926865086_102022-F.webp", "url_ml": "https://www.mercadolivre.com.br/p/MLB27938440", "slug": "estilete-trapezoidal-18mm-refor-ado-sata-st93642"}, {"nome": "Alicate Corte Diagonal Isolado 4 Pol Sata St70615ast", "preco": "R$ 64,90", "img_ml": "https://http2.mlstatic.com/D_NQ_NP_926166-MLB51896698824_102022-F.webp", "url_ml": "https://www.mercadolivre.com.br/p/MLB27501604", "slug": "alicate-corte-diagonal-isolado-4-pol-sata-st70615a"}, {"nome": "Jogo De Chaves Fenda Phillips Isolada Vde 7pç Sata St09303", "preco": "R$ 99,70", "img_ml": "https://http2.mlstatic.com/D_NQ_NP_995664-MLB51896687888_102022-F.webp", "url_ml": "https://www.mercadolivre.com.br/up/MLBU751725663", "slug": "jogo-de-chaves-fenda-phillips-isolada-vde-7p-sata"}, {"nome": "Conjunto De Chaves De Fenda Sata 15 Em 1", "preco": "R$ 180,86", "img_ml": "https://http2.mlstatic.com/D_NQ_NP_815887-MLB70893823776_082023-F.webp", "url_ml": "https://produto.mercadolivre.com.br/MLB-4022673371", "slug": "conjunto-de-chaves-de-fenda-sata-15-em-1"}];
+const produtos = [{"nome": "Chave Plusminus Phillips Isolada Ph1 X 80mm Wiha", "preco": "R$ 136,72", "html": "produtos/chave-plusminus-phillips-isolada-ph1-x-8.html", "img": "produtos/chave-plusminus-phillips-isolada-ph1-x-8.jpg"}, {"nome": "Alicates Industriais Isolados Conjunto Wiha 32981", "preco": "R$ 890,00", "html": "produtos/alicates-industriais-isolados-conjunto-w.html", "img": "produtos/alicates-industriais-isolados-conjunto-w.jpg"}, {"nome": "Identificação Perigo Equipamento Elétrico Pessoal", "preco": "R$ 19,50", "html": "produtos/identifica-o-perigo-equipamento-el-trico.html", "img": "produtos/identifica-o-perigo-equipamento-el-trico.jpg"}, {"nome": "Conjunto De Alicates De Crimpagem + Terminais 1200 Pcs", "preco": "R$ 149,88", "html": "produtos/conjunto-de-alicates-de-crimpagem-termin.html", "img": "produtos/conjunto-de-alicates-de-crimpagem-termin.jpg"}, {"nome": "Minipa Ez Phase II Detector De Sequência Trifásica", "preco": "R$ 199,00", "html": "produtos/minipa-ez-phase-ii-detector-de-sequ-ncia.html", "img": "produtos/minipa-ez-phase-ii-detector-de-sequ-ncia.jpg"}, {"nome": "Alicate Crimpador 9 Prensa Terminais Automático", "preco": "R$ 278,03", "html": "produtos/alicate-crimpador-9-prensa-terminais-aut.html", "img": "produtos/alicate-crimpador-9-prensa-terminais-aut.jpg"}, {"nome": "Estilete Trapezoidal 18mm Reforçado Sata St93642", "preco": "R$ 72,45", "html": "produtos/estilete-trapezoidal-18mm-refor-ado-sata.html", "img": "produtos/estilete-trapezoidal-18mm-refor-ado-sata.jpg"}, {"nome": "Alicate Corte Diagonal Isolado 4 Pol Sata St70615ast", "preco": "R$ 64,90", "html": "produtos/alicate-corte-diagonal-isolado-4-pol-sat.html", "img": "produtos/alicate-corte-diagonal-isolado-4-pol-sat.jpg"}, {"nome": "Jogo De Chaves Fenda Phillips Isolada Vde 7pç Sata", "preco": "R$ 99,70", "html": "produtos/jogo-de-chaves-fenda-phillips-isolada-vd.html", "img": "produtos/jogo-de-chaves-fenda-phillips-isolada-vd.jpg"}, {"nome": "Conjunto De Chaves De Fenda Sata 15 Em 1", "preco": "R$ 180,86", "html": "produtos/conjunto-de-chaves-de-fenda-sata-15-em-1.html", "img": "produtos/conjunto-de-chaves-de-fenda-sata-15-em-1.jpg"}];
+
 produtos.forEach(p => {
-document.getElementById('grid').innerHTML += `
+const card = `
 <div class="card">
-<a href="produtos/${p.slug}/">
-<img src="${p.img_ml}" alt="${p.nome}" onerror="this.src='https://via.placeholder.com/300x220/0000CC/FFFFFF?text=Produto'">
-</a>
-<div class="card-body">
-<h3>${p.nome}</h3>
-<div class="preco">${p.preco}</div>
-<a href="${p.url_ml}" class="btn" target="_blank" rel="nofollow">🛒 Comprar no ML</a>
-</div>
+  <div class="card-img-wrapper">
+    <img src="${p.img}" alt="${p.nome}" onerror="this.src='https://via.placeholder.com/300x260/0000CC/FFFFFF?text=Produto'">
+  </div>
+  <div class="card-body">
+    <h3>${p.nome}</h3>
+    <div class="preco">${p.preco}</div>
+    <a href="${p.html}" class="btn">🔍 CONFERIR PRODUTO</a>
+  </div>
 </div>`;
+document.getElementById('grid').innerHTML += card;
 });
 </script>
 </body>
